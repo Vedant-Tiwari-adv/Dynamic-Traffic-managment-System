@@ -82,7 +82,7 @@ def a_star_signal_decision(vehicle_count):
 
 
 # Main code
-cap = cv2.VideoCapture("traffic.mp4")
+cap = cv2.VideoCapture("traffic2.mp4")
 signal_state = 'red'  # Initial signal state
 waiting_cars = 0
 paused = False  # Initially not paused
