@@ -3,8 +3,6 @@
 ````markdown
 # 🚦 Adaptive Traffic Signal Control using YOLOv5
 
-[![Python Version](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A smart traffic management system that leverages the YOLOv5 object detection model to analyze a video feed, count vehicles, and dynamically control a traffic signal based on real-time traffic density.
 
