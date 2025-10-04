@@ -1,8 +1,8 @@
+Markdown
 
-
-````markdown
 # 🚦 Adaptive Traffic Signal Control using YOLOv5
 
+![Alt text for your image](DEMO%20trafic.png)
 
 A smart traffic management system that leverages the YOLOv5 object detection model to analyze a video feed, count vehicles, and dynamically control a traffic signal based on real-time traffic density.
 
@@ -51,14 +51,13 @@ Follow these steps to get the project set up and running on your local machine.
 ### 2. Installation
 
 First, clone the repository to your local machine:
-```bash
+bash
 git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
 cd your-repo-name
-````
 
 Next, it's highly recommended to create and activate a virtual environment:
+Bash
 
-```bash
 # Create the virtual environment
 python -m venv venv
 
@@ -67,60 +66,50 @@ python -m venv venv
 venv\Scripts\activate
 # On macOS/Linux:
 source venv/bin/activate
-```
 
 Finally, install the required packages:
+Bash
 
-```bash
 pip install -r requirements.txt
-```
 
-*(**Note:** For this to work, create a `requirements.txt` file and add the following lines to it:)*
+(Note: For this to work, create a requirements.txt file and add the following lines to it:)
+Plaintext
 
-```txt
 torch
 opencv-python
 numpy
 ultralytics
-```
 
-### 3\. Running the Application
+3. Running the Application
 
-Ensure you have a video file named `traffic2.mp4` in the project's root directory. Then, run the main script:
+Ensure you have a video file named traffic2.mp4 in the project's root directory. Then, run the main script:
+Bash
 
-```bash
 python your_script_name.py
-```
 
 A window should appear, showing the processed video feed.
 
------
-
-## 🔧 Configuration
+🔧 Configuration
 
 You can easily customize the application's behavior by modifying the variables at the top of the script.
+Variable	Type	Description	Default Value
+model.classes	list	A list of COCO class IDs to detect.	[2, 5, 7]
+region_top_left	tuple	The (x1, y1) coordinates for the top-left corner of the ROI.	(220, 2)
+region_bottom_right	tuple	The (x2, y2) coordinates for the bottom-right corner of the ROI.	(560, 170)
+PARKED_CARS	int	A fixed number of cars to subtract from the count, useful for ignoring permanently parked vehicles.	6
+VIDEO_SOURCE	string	The path to the input video file. Change to 0 to use the primary webcam.	"traffic2.mp4"
+MIN_AREA	int	The minimum pixel area for a detected bounding box to be considered a valid vehicle.	400
 
-| Variable              | Type      | Description                                                                                             | Default Value            |
-| --------------------- | --------- | ------------------------------------------------------------------------------------------------------- | ------------------------ |
-| `model.classes`       | `list`    | A list of COCO class IDs to detect.                                                                     | `[2, 5, 7]`              |
-| `region_top_left`     | `tuple`   | The `(x1, y1)` coordinates for the top-left corner of the ROI.                                          | `(220, 2)`               |
-| `region_bottom_right` | `tuple`   | The `(x2, y2)` coordinates for the bottom-right corner of the ROI.                                        | `(560, 170)`             |
-| `PARKED_CARS`         | `int`     | A fixed number of cars to subtract from the count, useful for ignoring permanently parked vehicles.     | `6`                      |
-| `VIDEO_SOURCE`        | `string`  | The path to the input video file. Change to `0` to use the primary webcam.                                | `"traffic2.mp4"`         |
-| `MIN_AREA`            | `int`     | The minimum pixel area for a detected bounding box to be considered a valid vehicle.                      | `400`                    |
+💻 Technologies Used
 
------
+    PyTorch: For running the deep learning model.
 
-## 💻 Technologies Used
+    YOLOv5 (from Ultralytics): For state-of-the-art object detection.
 
-  - **PyTorch:** For running the deep learning model.
-  - **YOLOv5 (from Ultralytics):** For state-of-the-art object detection.
-  - **OpenCV (cv2):** For all video processing, drawing, and display tasks.
-  - **NumPy:** For efficient numerical operations and array manipulation.
+    OpenCV (cv2): For all video processing, drawing, and display tasks.
 
------
+    NumPy: For efficient numerical operations and array manipulation.
 
-## 📄 License
+📄 License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
+This project is licensed under the MIT License - see the LICENSE.md file for details.
